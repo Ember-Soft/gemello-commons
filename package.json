@@ -8,10 +8,15 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "typescript": "^5.2.2"
-  },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
-    "@ember-soft:registry": "https://npm.pkg.github.com"
+    "@ember-soft:registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "typescript": "^5.2.2"
   }
 }
