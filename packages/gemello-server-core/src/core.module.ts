@@ -24,7 +24,7 @@ export class CoreModule {
         ...providers,
       ],
       imports: [
-        PrismaModule,
+        PrismaModule.forRoot(),
         ConfigModule.forRoot({
           envFilePath: ".env",
           isGlobal: true,
