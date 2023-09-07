@@ -4,7 +4,7 @@
   "packages": ["packages/*"],
   "command": {
     "publish": {
-      "registry": "https://npm.pkg.github.com/_registry/npm/ember-soft",
+      "registry": "https://npm.pkg.github.com/ember-soft",
       "access": "public"
     }
   }
