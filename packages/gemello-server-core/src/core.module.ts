@@ -12,12 +12,19 @@ import { PrismaModule } from "./prisma/prisma.module";
 import { ConfigModule } from "@nestjs/config";
 import { JwtModule } from "@nestjs/jwt";
 
+interface CoreModuleMetadata extends ModuleMetadata {
+  jwtSecret: string;
+}
+
 export class CoreModule {
-  public static forRoot({
-    providers = [],
-    exports = [],
-    imports = [],
-  }: ModuleMetadata = {}): DynamicModule {
+  public static forRoot(
+    {
+      providers = [],
+      exports = [],
+      imports = [],
+      jwtSecret,
+    }: CoreModuleMetadata = { jwtSecret: "" }
+  ): DynamicModule {
     return {
       providers: [
         { provide: APP_PIPE, useValue: new ValidationPipe() },
@@ -31,7 +38,7 @@ export class CoreModule {
         }),
         JwtModule.register({
           global: true,
-          secret: process.env.JWT_SECRET,
+          secret: jwtSecret,
         }),
         ...imports,
       ],
