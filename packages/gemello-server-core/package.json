@@ -1,0 +1,38 @@
+{
+  "name": "@ember-soft/gemello-server-core",
+  "version": "1.0.0",
+  "description": "",
+  "author": "michalraszczuk",
+  "homepage": "https://github.com/Ember-Soft/gemello-commons#readme",
+  "license": "ISC",
+  "main": "dist/gemello-server.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ember-Soft/gemello-commons.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/gemello-server.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Ember-Soft/gemello-commons/issues"
+  },
+  "devDependencies": {
+    "prisma": "^5.2.0"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.2.4",
+    "@nestjs/config": "^3.0.1",
+    "@nestjs/core": "^10.2.4",
+    "@nestjs/jwt": "^10.1.1",
+    "@prisma/client": "^5.2.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  }
+}
