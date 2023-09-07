@@ -1,12 +1,12 @@
 {
-  "name": "gemello-commons",
+  "name": "@ember-soft/gemello-commons",
   "version": "1.0.5",
   "private": false,
   "workspaces": [
     "packages/*"
   ],
   "publishConfig": {
-    "@ember-soft:registry": "https://npm.pkg.github.com",
+    "registry": "https://npm.pkg.github.com/@ember-soft",
     "access": "public"
   },
   "dependencies": {
