@@ -1,9 +1,10 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "0.0.1",
+  "version": "independent",
+  "packages": ["packages/*"],
   "command": {
     "publish": {
-      "@ember-soft:registry": "https://npm.pkg.github.com",
+      "registry": "https://npm.pkg.github.com/_registry/npm/ember-soft",
       "access": "public"
     }
   }
