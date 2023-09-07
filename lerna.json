@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "command": {
     "publish": {
-      "registry": "https://npm.pkg.github.com"
+      "@ember-soft:registry": "https://npm.pkg.github.com",
+      "access": "public"
     }
   }
 }
