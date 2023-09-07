@@ -24,7 +24,7 @@ jobs:
 
       - name: Publish packages
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+          echo "//npm.pkg.github.com/Ember-soft:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
           npx lerna publish from-package --yes
 
       - name: Clean up
