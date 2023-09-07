@@ -23,5 +23,9 @@
   },
   "bugs": {
     "url": "https://github.com/Ember-Soft/gemello-commons/issues"
+  },
+  "publishConfig": {
+    "@ember-soft:registry": "https://npm.pkg.github.com",
+    "access": "public"
   }
 }
