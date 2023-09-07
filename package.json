@@ -1,5 +1,5 @@
 {
-  "name": "@ember-soft/gemello",
+  "name": "@gemello/server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
