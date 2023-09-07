@@ -1,22 +1,18 @@
 {
-  "name": "@ember-soft/gemello",
-  "version": "1.0.3",
-  "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
-  },
-  "author": "",
-  "license": "ISC",
-  "files": [
-    "dist"
+  "name": "gemello-commons",
+  "private": false,
+  "workspaces": [
+    "packages/*"
   ],
   "publishConfig": {
     "@ember-soft:registry": "https://npm.pkg.github.com",
     "access": "public"
   },
-  "devDependencies": {
+  "dependencies": {
     "@types/node": "^20.5.9",
     "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "lerna": "^7.2.0"
   }
 }

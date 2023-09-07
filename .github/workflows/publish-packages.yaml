@@ -1,0 +1,40 @@
+name: Publish Packages
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch as needed
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Publish packages
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_PACKAGE_TOKEN }}" > ~/.npmrc
+          npx lerna publish from-package --yes --registry=https://npm.pkg.github.com/Ember-Soft
+
+      - name: Clean up
+        run: |
+          rm -f ~/.npmrc
+
+      - name: Push changes
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Publish packages [skip ci]"
+          git push
