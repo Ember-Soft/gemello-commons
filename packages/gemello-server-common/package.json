@@ -1,16 +1,14 @@
 {
-  "name": "@ember-soft/server",
-  "version": "1.0.7",
+  "name": "@ember-soft/gemello-server-common",
+  "version": "1.0.0",
   "description": "",
-  "author": "Ember-soft",
-  "private": false,
+  "author": "michalraszczuk",
   "homepage": "https://github.com/Ember-Soft/gemello-commons#readme",
   "license": "ISC",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "directories": {
-    "lib": "dist",
-    "test": "__tests__"
+    "lib": "dist"
   },
   "files": [
     "dist"
@@ -25,8 +23,8 @@
   "bugs": {
     "url": "https://github.com/Ember-Soft/gemello-commons/issues"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@ember-soft",
-    "access": "public"
+  "dependencies": {
+    "@nestjs/common": "^10.2.4",
+    "@nestjs/swagger": "^7.1.10"
   }
 }

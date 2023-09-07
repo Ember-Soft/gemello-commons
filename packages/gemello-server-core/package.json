@@ -1,11 +1,12 @@
 {
   "name": "@ember-soft/gemello-server-core",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "author": "michalraszczuk",
   "homepage": "https://github.com/Ember-Soft/gemello-commons#readme",
   "license": "ISC",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "directories": {
     "lib": "dist"
   },
