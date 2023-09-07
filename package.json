@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "@ember-soft:registry": "https://npm.pkg.github.com"
   }
 }
