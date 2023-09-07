@@ -1,5 +1,6 @@
 {
   "name": "gemello-commons",
+  "version": "1.0.4",
   "private": false,
   "workspaces": [
     "packages/*"
