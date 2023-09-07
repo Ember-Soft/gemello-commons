@@ -23,6 +23,9 @@ jobs:
         run: |
           npm ci
 
+      - name: Build
+        run: lerna run tsc
+
       - name: Publish packages
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
