@@ -1,11 +1,11 @@
 {
   "name": "@ember-soft/eslint-server-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "author": "michalraszczuk",
   "homepage": "https://github.com/Ember-Soft/gemello-commons#readme",
   "license": "ISC",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
   "directories": {
     "lib": "dist"
   },
