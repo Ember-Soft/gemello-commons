@@ -1,6 +1,6 @@
 {
   "name": "@ember-soft/gemello-server-common",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "author": "michalraszczuk",
   "homepage": "https://github.com/Ember-Soft/gemello-commons#readme",
@@ -25,6 +25,12 @@
   },
   "dependencies": {
     "@nestjs/common": "^10.2.4",
-    "@nestjs/swagger": "^7.1.10"
+    "@nestjs/swagger": "^7.1.10",
+    "@prisma/client": "^5.2.0"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^10.2.4",
+    "@types/jest": "^29.5.4",
+    "jest": "^29.6.4"
   }
 }
