@@ -1,0 +1,28 @@
+{
+  "name": "@ember-soft/eslint-server-config",
+  "version": "1.0.0",
+  "description": "",
+  "author": "michalraszczuk",
+  "homepage": "https://github.com/Ember-Soft/gemello-commons#readme",
+  "license": "ISC",
+  "main": "dist/index.ts",
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ember-Soft/gemello-commons.git"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/Ember-Soft/gemello-commons/issues"
+  }
+}
