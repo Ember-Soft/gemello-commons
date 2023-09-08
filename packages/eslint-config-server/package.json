@@ -1,6 +1,6 @@
 {
-  "name": "@ember-soft/eslint-server-config",
-  "version": "1.0.1",
+  "name": "@ember-soft/eslint-config-server",
+  "version": "1.0.2",
   "description": "",
   "author": "michalraszczuk",
   "homepage": "https://github.com/Ember-Soft/gemello-commons#readme",
