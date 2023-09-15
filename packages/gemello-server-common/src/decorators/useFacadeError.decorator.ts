@@ -1,5 +1,5 @@
-import { UseError } from "@ember-soft/gemello-server-common";
 import { InternalServerErrorException } from "@nestjs/common";
+import { UseError } from "../utils/useError";
 
 const getErrorMessage = (e: unknown) =>
   e instanceof Error ? e.message : "unknown facade error";
