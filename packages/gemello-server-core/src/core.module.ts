@@ -27,7 +27,10 @@ export class CoreModule {
   ): DynamicModule {
     return {
       providers: [
-        { provide: APP_PIPE, useValue: new ValidationPipe() },
+        {
+          provide: APP_PIPE,
+          useValue: new ValidationPipe({ transform: true }),
+        },
         ...providers,
       ],
       imports: [

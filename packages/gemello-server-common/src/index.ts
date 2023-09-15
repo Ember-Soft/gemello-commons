@@ -2,6 +2,7 @@ export { GemelloUserContext } from "./decorators/gemelloUserContext.decorator";
 export { IntegrationTestHookBuilder } from "./testing/integration-tests/buildIntegrationTestHook";
 export { RepositoryError } from "./errors/repository.error";
 export { UseError } from "./utils/useError";
+export { UseFacadeError } from "./decorators/useFacadeError.decorator";
 export { UseRepositoryError } from "./decorators/useRepositoryError.decorator";
 export { User } from "./decorators/user.decorator";
 
