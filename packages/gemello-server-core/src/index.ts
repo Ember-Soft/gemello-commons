@@ -1,3 +1,4 @@
+export { AuthGuard } from "./guards/auth.guard";
 export { CoreModule } from "./core.module";
 export { HttpFacade } from "./facade/httpFacade";
 export { HttpFacadeModule } from "./facade/httpFacade.module";
