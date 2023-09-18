@@ -56,16 +56,16 @@ export class IntegrationTestHookBuilder<T extends PrismaClient> {
       let prisma: T;
 
       beforeEach(async () => {
-        const moduleRef = await Test.createTestingModule(
-          this.buildProps.moduleMetadata
-        ).compile();
+        const moduleRef = await Test.createTestingModule(this.buildProps.moduleMetadata).compile();
 
         prisma = moduleRef.get<T>(this.buildProps.PrismaService);
 
-        await this.buildProps.clearDb(prisma);
-        await this.buildProps.fillDb(prisma);
-        await this.buildProps.callback(moduleRef);
+        await await this.buildProps.callback(moduleRef);
       });
+
+      beforeEach(() => this.buildProps.fillDb(prisma));
+
+      afterAll(() => this.buildProps.clearDb(prisma));
     };
   }
 }
