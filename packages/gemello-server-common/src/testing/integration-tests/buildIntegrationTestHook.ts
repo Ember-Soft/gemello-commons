@@ -1,6 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { Prisma, PrismaClient } from "@prisma/client";
-import { ModuleMetadata } from "@nestjs/common";
+import { INestApplication, ModuleMetadata } from "@nestjs/common";
 
 export interface BuildIntegrationTestHookProps<T extends PrismaClient> {
   PrismaService: { new (): T };
@@ -54,19 +54,26 @@ export class IntegrationTestHookBuilder<T extends PrismaClient> {
   public build() {
     return () => {
       let prisma: PrismaClient;
+      let app: INestApplication;
 
-      beforeEach(async () => {
+      beforeAll(async () => {
         const moduleRef = await Test.createTestingModule(this.buildProps.moduleMetadata).compile();
-
         prisma = moduleRef.get<T>(this.buildProps.PrismaService);
-
-        await this.buildProps.clearDb(prisma);
         await this.buildProps.callback(moduleRef);
+        app = moduleRef.createNestApplication();
+
+        await app.init();
       });
 
-      beforeEach(() => prisma.$transaction((tx) => this.buildProps.fillDb(tx)));
+      beforeEach(async () => {
+        await this.buildProps.clearDb(prisma);
+        await this.buildProps.fillDb(prisma);
+      });
 
-      afterAll(() => this.buildProps.clearDb(prisma));
+      afterAll(async () => {
+        await this.buildProps.clearDb(prisma);
+        await app.close();
+      });
     };
   }
 }
