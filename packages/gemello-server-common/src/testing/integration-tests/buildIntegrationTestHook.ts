@@ -60,7 +60,8 @@ export class IntegrationTestHookBuilder<T extends PrismaClient> {
 
         prisma = moduleRef.get<T>(this.buildProps.PrismaService);
 
-        await await this.buildProps.callback(moduleRef);
+        await this.buildProps.clearDb(prisma);
+        await this.buildProps.callback(moduleRef);
       });
 
       beforeEach(() => this.buildProps.fillDb(prisma));
