@@ -6,7 +6,7 @@ export interface BuildIntegrationTestHookProps<T extends PrismaClient> {
   PrismaService: { new (): T };
   clearDb: (prisma: T) => Promise<void>;
   fillDb: (prisma: T) => Promise<void>;
-  callback: (moduleRef: TestingModule) => Promise<void>;
+  callback: (moduleRef: TestingModule, app: INestApplication) => Promise<void>;
   moduleMetadata: ModuleMetadata;
 }
 
@@ -41,7 +41,7 @@ export class IntegrationTestHookBuilder<T extends PrismaClient> {
     return this;
   }
 
-  public setCallback(cb: (moduleRef: TestingModule) => Promise<void>) {
+  public setCallback(cb: (moduleRef: TestingModule, app: INestApplication) => Promise<void>) {
     this.buildProps.callback = cb;
     return this;
   }
@@ -59,9 +59,9 @@ export class IntegrationTestHookBuilder<T extends PrismaClient> {
       beforeAll(async () => {
         const moduleRef = await Test.createTestingModule(this.buildProps.moduleMetadata).compile();
         prisma = moduleRef.get<T>(this.buildProps.PrismaService);
-        await this.buildProps.callback(moduleRef);
         app = moduleRef.createNestApplication();
 
+        await this.buildProps.callback(moduleRef, app);
         await app.init();
       });
 
