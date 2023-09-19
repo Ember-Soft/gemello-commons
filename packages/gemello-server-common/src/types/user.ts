@@ -8,5 +8,4 @@ interface MemberOfOrganizationInfo {
 export interface GemelloUser {
   userId: number;
   userName: string;
-  belongsTo: MemberOfOrganizationInfo[];
 }
