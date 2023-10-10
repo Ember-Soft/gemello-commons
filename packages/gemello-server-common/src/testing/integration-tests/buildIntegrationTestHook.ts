@@ -19,7 +19,7 @@ export interface BuildIntegrationTestHookProps<T extends PrismaClient> {
 const emptyFn = async () => {};
 export type Class<T> = { new (): T };
 
-interface OverrideProvider {
+export interface OverrideProvider {
   provider: symbol | string | Class<any>;
   value: any;
 }
