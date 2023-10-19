@@ -6,6 +6,6 @@ interface MemberOfOrganizationInfo {
 }
 
 export interface GemelloUser {
-  userId: number;
+  userId: string;
   userName: string;
 }
