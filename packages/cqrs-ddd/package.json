@@ -1,0 +1,31 @@
+{
+  "name": "@ember-soft/cqrs-ddd",
+  "version": "1.0.0",
+  "description": "",
+  "author": "michalraszczuk",
+  "homepage": "https://github.com/Ember-Soft/cqrs-ddd#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ember-Soft/gemello-commons.git"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/Ember-Soft/gemello-commons/issues"
+  },
+  "dependencies": {
+    "@nestjs/cqrs": "^10.2.6"
+  }
+}
