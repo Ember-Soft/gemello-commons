@@ -26,13 +26,7 @@ export class CoreModule {
     }: CoreModuleMetadata = { jwtSecret: "" }
   ): DynamicModule {
     return {
-      providers: [
-        {
-          provide: APP_PIPE,
-          useValue: new ValidationPipe({ transform: true }),
-        },
-        ...providers,
-      ],
+      providers: [...providers],
       imports: [
         PrismaModule.forRoot(),
         ConfigModule.forRoot({
